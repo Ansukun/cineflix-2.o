@@ -8,28 +8,30 @@ import { useHistory } from 'react-router-dom';
 import { Avatar } from '@material-ui/core'
 function Nav() {
 
-    const [show,handleshow] = useState(false);
-    const history = useHistory();
-    const user = useSelector(selectUser);
+    const [show, handleShow] = useState(false);
+  const [open, setopen] = useState(false);
+  const history = useHistory();
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        handleShow(true);
+      } else handleShow(false);
+    });
+    return () => {
+      window.removeEventListener("scroll", handleShow);
+    };
+  }, []);
 
-    const toggleHome = () => {
-        scroll.scrollToTop();
-      };
-    
-    const transitionNavBar = () => {
-        if(window.scrollY > 100){
-            handleshow(true)
-        }
-        else{
-            handleshow(false)
-        }
-    }
-    useEffect(() => {
-        window.addEventListener("scroll",transitionNavBar)
-        return () => {
-            window.removeEventListener("scroll" ,transitionNavBar)
-        }
-    }, [])
+  const openSidebar = () => {
+    setopen(!open);
+  };
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
+  
+
     return (
     <div className = {`nav  ${show&&'nav__black'}`}>
             <div className = "nav__contents">

@@ -3,7 +3,7 @@ import "./LoginScreen.css"
 import bg from "../screens/baground.jpg"
 import cinelfix from "../cineflix.png"
 import SignupScreen from  "../screens/SignupScreen"
-
+import TabComponents from "../TabComponents"
 function LoginScreen() {
     const [signIn,setSignIn] =  useState(false);
     return (
@@ -21,9 +21,9 @@ function LoginScreen() {
                 ):
                 (
                     <>
-                    <h1>Unlimited films,Tv programmes and more Hurry up</h1>
-                     <h2>watch anywhere cancel anytime </h2>
-                     <h3> ready to watch enter your email to create or restart your membership</h3>
+                    <h1 className = "title">Unlimited films,Tv programmes and more Hurry up</h1>
+                     <h2 className = "title">watch anywhere cancel anytime </h2>
+                     <h3 className = "title"> ready to watch enter your email to create or restart your membership</h3>
                      <div className = "loginScreen__input">
                     <form>
                         <input type = "email" placeholder = "email Address" />
@@ -31,10 +31,11 @@ function LoginScreen() {
                             Get Started
                         </button>
                     </form>
+                     
                      </div>
                      </>
                 )}
-                
+                <TabComponents/>
             </div>
 
         </div>
