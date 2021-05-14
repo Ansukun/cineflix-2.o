@@ -13,7 +13,7 @@ function Tvscreen() {
             <Row title = "NetFlix Originals"
             fetchUrl = { requests.fetchNetflixOriginalsTv}
             isLargeRow/>
-            <Row title = "Top Rated Series"
+            <Row title = "Top Rated Animes"
             fetchUrl = { requests.fetchTopRatedTV}/>
             <Row title = "Tv Action And Adventure"
             fetchUrl = { requests.fetchActionMoviesTv}/>
